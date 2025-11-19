@@ -1,11 +1,11 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getProjectBySlug } from '../utils/projectStorage';
+import { projectsData } from '../data/portfolioData';
 import './ProjectDetail.css';
 
 const ProjectDetail = () => {
   const { slug } = useParams();
-  const project = getProjectBySlug(slug);
+  const project = projectsData.find(p => p.slug === slug);
 
   if (!project) {
     return (

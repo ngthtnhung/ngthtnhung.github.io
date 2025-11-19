@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import SkillCard from '../components/SkillCard';
 import BlogCard from '../components/BlogCard';
-import { skillsData, blogData } from '../data/portfolioData';
-import { getProjects } from '../utils/projectStorage';
+import { projectsData, skillsData, blogData } from '../data/portfolioData';
 import './Home.css';
 
 const Home = () => {
-  const [projects, setProjects] = useState([]);
-
   useEffect(() => {
-    // Load projects from storage
-    setProjects(getProjects());
-
     // Scroll to hash on mount
     if (window.location.hash) {
       setTimeout(() => {
@@ -82,7 +76,7 @@ const Home = () => {
         <div className="container">
           <h2 className="section-title">My Projects</h2>
           <div className="projects-grid">
-            {projects.map(project => (
+            {projectsData.map(project => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
