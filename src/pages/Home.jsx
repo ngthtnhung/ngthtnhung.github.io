@@ -1,12 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import SkillCard from '../components/SkillCard';
 import BlogCard from '../components/BlogCard';
-import { projectsData, skillsData, blogData } from '../data/portfolioData';
+import { skillsData, blogData } from '../data/portfolioData';
+import { getProjects } from '../utils/projectStorage';
 import './Home.css';
 
 const Home = () => {
+  const [projects, setProjects] = useState([]);
+
   useEffect(() => {
+    // Load projects from storage
+    setProjects(getProjects());
+
     // Scroll to hash on mount
     if (window.location.hash) {
       setTimeout(() => {
@@ -76,7 +82,7 @@ const Home = () => {
         <div className="container">
           <h2 className="section-title">My Projects</h2>
           <div className="projects-grid">
-            {projectsData.map(project => (
+            {projects.map(project => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
@@ -114,7 +120,7 @@ const Home = () => {
               <div className="contact-details">
                 <div className="contact-item">
                   <h4>Email</h4>
-                  <p>contact@example.com</p>
+                  <p>ngthtnhung2005@gmail.com</p>
                 </div>
                 <div className="contact-item">
                   <h4>Location</h4>
@@ -123,9 +129,8 @@ const Home = () => {
                 <div className="contact-item">
                   <h4>Social</h4>
                   <div className="social-links">
-                    <a href="#" className="social-link">GitHub</a>
-                    <a href="#" className="social-link">LinkedIn</a>
-                    <a href="#" className="social-link">Twitter</a>
+                    <a href="https://github.com/ngthtnhung" className="social-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/ngthtnhung/" className="social-link">LinkedIn</a>
                   </div>
                 </div>
               </div>
