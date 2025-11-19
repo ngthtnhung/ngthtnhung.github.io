@@ -592,3 +592,217 @@ body {
         padding: 60px 0;
     }
 }
+
+/* Project Detail Page Styles */
+.project-detail-container {
+    max-width: 1000px;
+    margin: 120px auto 60px;
+    padding: 40px;
+    background-color: var(--background);
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-bottom: 30px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: var(--secondary-color);
+}
+
+.project-detail-title {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 25px;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    margin-bottom: 40px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.meta-item {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.meta-item strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.project-section {
+    margin-bottom: 50px;
+}
+
+.project-section h2 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.project-section h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+.project-section p {
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.project-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-section ul li {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.project-section ul li::before {
+    content: "▸";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 10px;
+}
+
+.highlight-list li strong {
+    color: var(--text-primary);
+}
+
+.implementation-details {
+    display: grid;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.detail-block {
+    background-color: var(--background-light);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.detail-block h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.detail-block p {
+    margin-bottom: 15px;
+}
+
+.detail-block ul {
+    margin-top: 10px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.result-card {
+    background-color: var(--background-light);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.result-card h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    margin-top: 0;
+}
+
+.result-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.project-actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments for project detail pages */
+@media (max-width: 768px) {
+    .project-detail-container {
+        margin-top: 100px;
+        padding: 20px;
+    }
+
+    .project-detail-title {
+        font-size: 1.8rem;
+    }
+
+    .project-meta {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-actions {
+        flex-direction: column;
+    }
+
+    .project-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Make project cards clickable */
+.project-card {
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.placeholder-image {
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
