@@ -257,56 +257,128 @@ body {
 
 /* About Section */
 .about-section {
-    background-color: var(--background-light);
+    background-color: #0a1628;
+    color: white;
+    min-height: 100vh;
 }
 
-.about-content {
-    max-width: 900px;
-    margin: 0 auto;
+.about-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 2px solid #fbbf24;
+    border-radius: 25px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
 }
 
-.about-text p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-}
-
-.about-text h3 {
-    font-size: 1.8rem;
-    margin: 2rem 0 1.5rem;
-    color: var(--text-primary);
-}
-
-.skills-grid {
+.about-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: 350px 1fr;
+    gap: 80px;
+    align-items: start;
 }
 
-.skill-item {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease;
+.about-greeting {
+    text-align: left;
 }
 
-.skill-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+.about-greeting h2 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
 }
 
-.skill-item h4 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+.about-greeting .highlight {
+    color: #fbbf24;
+    font-weight: 700;
 }
 
-.skill-item p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
+.about-description {
+    text-align: left;
+}
+
+.about-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    color: #e5e7eb;
+}
+
+.about-description .highlight-text {
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+.about-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-link {
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.icon-link:hover {
+    background-color: #fbbf24;
+    border-color: #fbbf24;
+    transform: translateY(-3px);
+}
+
+.icon-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-outline:hover {
+    background-color: white;
+    color: #0a1628;
+}
+
+.btn-primary {
+    background-color: transparent;
+    color: #fbbf24;
+    border: 2px solid #fbbf24;
+    padding: 12px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #fbbf24;
+    color: #0a1628;
 }
 
 /* Projects Section */
@@ -646,6 +718,24 @@ body {
     .profile-circle {
         width: 300px;
         height: 300px;
+    }
+
+    .about-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .about-greeting h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-description {
+        text-align: center;
+    }
+
+    .about-actions {
+        justify-content: center;
     }
 
     .section-title {
