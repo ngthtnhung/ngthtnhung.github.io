@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Animated Background -->
+    <canvas id="background-canvas"></canvas>
+    
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -17,8 +20,11 @@
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li><a href="#contests" class="nav-link">Contests</a></li>
+                <li><a href="#activities" class="nav-link">Activities</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -35,12 +41,12 @@
             <div class="hero-wrapper">
                 <div class="hero-content">
                     <div class="hero-badge">DATA ANALYST PORTFOLIO</div>
-                    <h1 class="hero-title">MUHAMMAD <span class="highlight">GARDIAN</span> NOVANDRI</h1>
-                    <p class="hero-tagline">I help people finding <span class="highlight-text">insights</span> through <span class="highlight-text">data</span></p>
+                    <h1 class="hero-title"><span class="title-part1">NGUYEN THI </span><span class="highlight">TUYET NHUNG</span></h1>
+                    <p class="hero-tagline"></p>
                 </div>
                 <div class="hero-image">
                     <div class="profile-circle">
-                        <img src="profile.png" alt="Nguyen Thi Tuyet Nhung">
+                        <img src="profile.jpeg" alt="Nguyen Thi Tuyet Nhung">
                     </div>
                 </div>
             </div>
@@ -50,19 +56,20 @@
     <!-- About Section -->
     <section id="about" class="section about-section">
         <div class="container">
-            <div class="about-badge">About Me</div>
-            <div class="about-wrapper">
+            <div class="about-badge scroll-reveal">About Me</div>
+            <div class="about-wrapper scroll-reveal">
                 <div class="about-greeting">
-                    <h2>Hello,<br>I'm <span class="highlight">Gardi!</span></h2>
+                    <h2>Hello,<br>I'm <span class="highlight">Nhung!</span></h2>
                 </div>
                 <div class="about-description">
-                    <p><span class="highlight-text">Data Reporting / Analyst</span> and <span class="highlight-text">Certified Banking Generalist</span> with a proven track record in various analytical roles, showcasing expertise in end-to-end business processes within the Banking / Financial Industry. Proficient in <span class="highlight-text">SQL, Python, Google Sheets, Microsoft Excel, and Statistics</span> for comprehensive data analysis and visualization. Comfortable with end-to-end data analysis, data processing, dashboard / daily reporting creation, and presenting actionable insights with effective communication and engaging story-telling skills.</p>
+                    <p>Currently pursuing a degree in <span class="highlight-text">Software Engineering</span>, with a focus on <span class="highlight-text">data analysis</span> and <span class="highlight-text">business analysis</span>. Skilled in <span class="highlight-text">Python, SQL, Excel, Power BI, Figma, and UML</span>, I am passionate about turning data into actionable insights and designing user-centered solutions. Highly motivated, detail-oriented, and eager to contribute to projects that bridge business needs and technical execution.</p>
                     
                     <div class="about-actions">
                         <div class="social-icons">
-                            <a href="#" class="icon-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                            <a href="#" class="icon-link" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
-                            <a href="#" class="icon-link" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                            <a href="https://linkedin.com/in/ngthtnhung/" class="icon-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                            <a href="https://github.com/ngthtnhung" target="_blank" class="icon-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                            <a href="tel:+84971512343" class="icon-link" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
+                            <a href="mailto:ngthtnhung2005@gmail.com" class="icon-link" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
                         </div>
                         <a href="#projects" class="btn btn-outline">Projects</a>
                         <a href="#" class="btn btn-primary">Download CV</a>
@@ -72,162 +79,573 @@
         </div>
     </section>
 
+    <!-- Technical Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <div class="skills-badge scroll-reveal">Technical Skills</div>
+            
+            <div class="skills-container">
+                <!-- Programming Languages -->
+                <div class="skill-category scroll-reveal stagger-1">
+                    <h3 class="category-title"><span class="highlight">Programming</span> Languages</h3>
+                    <div class="skill-list">
+                        <ul>
+                            <li>Python</li>
+                            <li>SQL</li>
+                            <li>JavaScript</li>
+                            <li>HTML/CSS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Data Analytic Tools -->
+                <div class="skill-category scroll-reveal stagger-2">
+                    <h3 class="category-title"><span class="highlight">Data Analytic</span> Tools</h3>
+                    <div class="skill-list">
+                        <ul>
+                            <li>Excel (Pivot Table, VLOOKUP/XLOOKUP, IF, INDEX-MATCH, Data Cleaning)</li>
+                            <li>SQL Databases: MySQL, PostgreSQL</li>
+                            <li>Jupyter Notebook</li>
+                            <li>Google Sheets (Automation with formulas)</li>
+                            <li>Power Query (ETL in Excel/Power BI)</li>
+                            <li>Python Libraries: Pandas, NumPy, Scikit-learn</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Data Visualization Tools -->
+                <div class="skill-category scroll-reveal stagger-3">
+                    <h3 class="category-title"><span class="highlight">Data Visualization</span> Tools</h3>
+                    <div class="skill-list">
+                        <ul>
+                            <li>Power BI</li>
+                            <li>Tableau (basic)</li>
+                            <li>Matplotlib / Seaborn</li>
+                            <li>Plotly</li>
+                            <li>Excel Charts</li>
+                            <li>Figma</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Data Analytic Methods -->
+                <div class="skill-category scroll-reveal stagger-4">
+                    <h3 class="category-title"><span class="highlight">Data Analytic</span> Methods</h3>
+                    <div class="skill-list">
+                        <ul>
+                            <li>Exploratory Data Analysis (EDA)</li>
+                            <li>Data Cleaning & Preprocessing</li>
+                            <li>Feature Engineering</li>
+                            <li>Descriptive Statistics (mean, median, variance, SD…)</li>
+                            <li>Hypothesis Testing (t-test, chi-square)</li>
+                            <li>Correlation & Regression Analysis</li>
+                            <li>Clustering (K-means)</li>
+                            <li>Classification Models (Logistic Regression, Random Forest, XGBoost/LightGBM)</li>
+                            <li>Churn Prediction / Risk Scoring</li>
+                            <li>Dashboard Reporting & KPI Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="section projects-section">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card" onclick="window.location.href='project1.html'">
-                    <div class="project-image">
-                        <div class="placeholder-image">📊</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Credit Default Risk Analysis</h3>
-                        <p>Built an interactive Power BI dashboard analyzing financial datasets to identify high-risk customer segments and provide data-driven credit recommendations.</p>
-                        <div class="project-tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Excel</span>
-                            <span class="tag">EDA</span>
+            <div class="projects-badge scroll-reveal">Notable Projects</div>
+            
+            <div class="projects-list">
+                <!-- Project 1 -->
+                <div class="project-item scroll-reveal-left">
+                    <div class="project-number">01</div>
+                    <div class="project-details">
+                        <h3 class="project-title">
+                            <span class="highlight">CREDIT DEFAULT RISK ANALYSIS</span><br>
+                            FINANCIAL INSIGHTS DASHBOARD
+                        </h3>
+                        
+                        <div class="project-image-container">
+                            <img src="project1_gif.gif" alt="Credit Default Risk Analysis Dashboard" class="project-img">
                         </div>
-                        <div class="project-links">
-                            <a href="project1.html" class="project-link" onclick="event.stopPropagation()">View Details</a>
-                            <a href="#" class="project-link" onclick="event.stopPropagation()">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" onclick="window.location.href='project2.html'">
-                    <div class="project-image">
-                        <div class="placeholder-image">🤖</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>E-commerce Churn Prediction</h3>
-                        <p>Developed ML models to predict customer churn with 40+ engineered features, achieving high ROC-AUC scores and actionable retention strategies.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">XGBoost</span>
-                            <span class="tag">Scikit-learn</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="project2.html" class="project-link" onclick="event.stopPropagation()">View Details</a>
-                            <a href="#" class="project-link" onclick="event.stopPropagation()">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" onclick="window.location.href='project3.html'">
-                    <div class="project-image">
-                        <div class="placeholder-image">🚦</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>NavFlow – AI Traffic Analysis</h3>
-                        <p>Created an AI-powered system using computer vision to analyze real-time traffic camera data and predict congestion levels with visual map overlays.</p>
-                        <div class="project-tags">
-                            <span class="tag">OpenCV</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">ReactJS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="project3.html" class="project-link" onclick="event.stopPropagation()">View Details</a>
-                            <a href="#" class="project-link" onclick="event.stopPropagation()">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="section blog-section">
-        <div class="container">
-            <h2 class="section-title">Blog</h2>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <div class="placeholder-image">Blog Post</div>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date">November 15, 2025</span>
-                        <h3>Getting Started with Modern Web Development</h3>
-                        <p>Learn the essential tools and technologies you need to start your journey in web development in 2025.</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <div class="placeholder-image">Blog Post</div>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date">November 10, 2025</span>
-                        <h3>The Importance of Responsive Design</h3>
-                        <p>Discover why responsive design is crucial for modern websites and how to implement it effectively.</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <div class="placeholder-image">Blog Post</div>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date">November 5, 2025</span>
-                        <h3>JavaScript Best Practices in 2025</h3>
-                        <p>Explore the latest best practices and patterns for writing clean, maintainable JavaScript code.</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <h4>Email</h4>
-                            <p>contact@example.com</p>
-                        </div>
-                        <div class="contact-item">
-                            <h4>Location</h4>
-                            <p>City, Country</p>
-                        </div>
-                        <div class="contact-item">
-                            <h4>Social</h4>
-                            <div class="social-links">
-                                <a href="#" class="social-link">GitHub</a>
-                                <a href="#" class="social-link">LinkedIn</a>
-                                <a href="#" class="social-link">Twitter</a>
+                        
+                        <div class="project-content-wrapper">
+                            <div class="project-left">
+                                <div class="project-section-block">
+                                    <h4>Overview</h4>
+                                    <p>A financial analytics project aimed at identifying key factors contributing to loan default risk. The project involved collecting and cleaning customer financial data, performing exploratory analysis, and generating actionable insights for credit evaluation improvements. Delivered an interactive dashboard summarizing default trends by income, employment type, credit history, and debt ratio.</p>
+                                </div>
+                                
+                                <div class="project-section-block">
+                                    <p class="tools-line"><strong class="tools-label">Tools:</strong> Power BI, Excel, SQL, Python</p>
+                                </div>
+                            </div>
+                            
+                            <div class="project-right">
+                                <h4>Deliverables / Artefacts</h4>
+                                <div class="deliverables-buttons">
+                                    <a href="https://github.com/ngthtnhung/credit-default-risk-analysis.git" class="btn-deliverable">Power BI Dashboard</a>
+                                    <a href="https://docs.google.com/document/d/1o89Yr_TJlUR9ZYnA5uZH78yeGDu0pScIXUeNE7V3pFo/edit?usp=sharing" class="btn-deliverable">Analysis Report with Insights</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+
+                <!-- Project 2 -->
+                <div class="project-item scroll-reveal-right">
+                    <div class="project-number">02</div>
+                    <div class="project-details">
+                        <h3 class="project-title">
+                            <span class="highlight">E-COMMERCE CHURN PREDICTION</span><br>
+                            CUSTOMER RETENTION MODELING
+                        </h3>
+                        
+                        <div class="project-image-container">
+                            <img src="project2.png" alt="E-commerce Churn Prediction" class="project-img">
+                        </div>
+                        
+                        <div class="project-content-wrapper">
+                            <div class="project-left">
+                                <div class="project-section-block">
+                                    <h4>Overview</h4>
+                                    <p>A machine learning project analyzing Gen Z e-commerce customer behavior to predict churn and inform retention strategies. Responsibilities included data collection, feature engineering, model training, evaluation, and translating insights into business recommendations.</p>
+                                </div>
+                                
+                                <div class="project-section-block">
+                                    <p class="tools-line"><strong class="tools-label">Tools:</strong> Python, Jupyter Notebook, Excel, LightGBM, XGBoost, Scikit-learn</p>
+                                </div>
+                            </div>
+                            
+                            <div class="project-right">
+                                <h4>Deliverables / Artefacts</h4>
+                                <div class="deliverables-buttons">
+                                    <a href="https://github.com/ngthtnhung/skilio_mall_churn_prediction.git" class="btn-deliverable">Github Repository</a>
+                                    <a href="https://drive.google.com/file/d/1pt3UlWdJ4qZhBS4SGG9zmxjRRtXjRyQs/view?usp=sharing" class="btn-deliverable">Slide Deck</a>
+                                    <a href="#" class="btn-deliverable">Power BI Dashboard</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-item scroll-reveal-left">
+                    <div class="project-number">03</div>
+                    <div class="project-details">
+                        <h3 class="project-title">
+                            <span class="highlight">SMART RIDE</span><br>
+                            RIDE-SHARING PLATFORM
+                        </h3>
+                        
+                        <div class="project-image-container">
+                            <img src="project3.png" alt="Smart Ride Platform" class="project-img">
+                        </div>
+                        
+                        <div class="project-content-wrapper">
+                            <div class="project-left">
+                                <div class="project-section-block">
+                                    <h4>Overview</h4>
+                                    <p>A university project simulating a ride-sharing platform. Focused on business analysis and UI/UX support, creating requirements documentation, designing user stories, workflows, and mockups. Helped ensure alignment between end-user needs and system design.</p>
+                                </div>
+                                
+                                <div class="project-section-block">
+                                    <p class="tools-line"><strong class="tools-label">Tools:</strong> Figma, Draw.io, Excel, Jira, Trello</p>
+                                </div>
+                            </div>
+                            
+                            <div class="project-right">
+                                <h4>Deliverables / Artefacts</h4>
+                                <div class="deliverables-buttons">
+                                    <a href="https://drive.google.com/drive/folders/1hFcO2xLWJU5nbWQO5uD05SLrUSt0kX53?usp=sharing" class="btn-deliverable">Requirements Analysis & Design</a>
+                                    <a href="https://www.figma.com/proto/h2qoyAss23Zwn8J8P5RbyY/rad?t=AWviCCzK7bXAcE7B-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=0-191&starting-point-node-id=0%3A191" class="btn-deliverable">UI Wireframes & Interactive Prototypes</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section certificates-section">
+        <div class="container">
+            <div class="certificates-badge scroll-reveal">Certificates</div>
+            
+            <div class="certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="certificate-card scroll-reveal-scale stagger-1">
+                    <div class="certificate-pdf-preview">
+                        <iframe src="ielts_cert.pdf" frameborder="0"></iframe>
+                    </div>
+                    <div class="certificate-content">
+                        <h3 class="certificate-title">
+                            IELTS Certificate: 6.0
+                            <a href="ielts_cert.pdf" download class="download-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </a>
+                        </h3>
+                        <p class="certificate-issuer">British Council</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="certificate-card scroll-reveal-scale stagger-2">
+                    <div class="certificate-pdf-preview">
+                        <iframe src="mos_cert.pdf" frameborder="0"></iframe>
+                    </div>
+                    <div class="certificate-content">
+                        <h3 class="certificate-title">
+                            MOS Word Certificate
+                            <a href="mos_cert.pdf" download class="download-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </a>
+                        </h3>
+                        <p class="certificate-issuer">Microsoft</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="certificate-card scroll-reveal-scale stagger-3">
+                    <div class="certificate-pdf-preview">
+                        <iframe src="gg_ux_cert.pdf" frameborder="0"></iframe>
+                    </div>
+                    <div class="certificate-content">
+                        <h3 class="certificate-title">
+                            Google UX Design Professional
+                            <a href="gg_ux_cert.pdf" download class="download-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </a>
+                        </h3>
+                        <p class="certificate-issuer">Coursera</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="certificate-card scroll-reveal-scale stagger-4">
+                    <div class="certificate-pdf-preview">
+                        <iframe src="gg_pm_cert.pdf" frameborder="0"></iframe>
+                    </div>
+                    <div class="certificate-content">
+                        <h3 class="certificate-title">
+                            Google Project Management
+                            <a href="gg_pm_cert.pdf" download class="download-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </a>
+                        </h3>
+                        <p class="certificate-issuer">Coursera</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 5 -->
+                <div class="certificate-card scroll-reveal-scale stagger-5">
+                    <div class="certificate-pdf-preview">
+                        <iframe src="da_visualization_pbi_cert.pdf" frameborder="0"></iframe>
+                    </div>
+                    <div class="certificate-content">
+                        <h3 class="certificate-title">
+                            Data Analysis and Visualization with Power BI
+                            <a href="da_visualization_pbi_cert.pdf" download class="download-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </a>
+                        </h3>
+                        <p class="certificate-issuer">Microsoft / Coursera</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 6 -->
+                <div class="certificate-card scroll-reveal-scale stagger-6">
+                    <div class="certificate-pdf-preview">
+                        <iframe src="intro_se_testing_cert.pdf" frameborder="0"></iframe>
+                    </div>
+                    <div class="certificate-content">
+                        <h3 class="certificate-title">
+                            Introduction to Software Testing
+                            <a href="intro_se_testing_cert.pdf" download class="download-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </a>
+                        </h3>
+                        <p class="certificate-issuer">Coursera</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contests Section -->
+    <section id="contests" class="section contests-section">
+        <div class="container">
+            <div class="contests-badge scroll-reveal">Contests</div>
+            
+            <div class="contests-grid">
+                <!-- Contest 1 -->
+                <div class="contest-card scroll-reveal-scale stagger-1" onclick="openContestModal('contest1')">
+                    <div class="contest-image">
+                        <img src="contest/eco3.jpg" alt="ECO-Future 2023">
+                    </div>
+                    <div class="contest-overlay">
+                        <h3 class="contest-title">ECO-Future 2023</h3>
+                        <p class="contest-date">Consolation Prize</p>
+                    </div>
+                </div>
+
+                <!-- Contest 2 -->
+                <div class="contest-card scroll-reveal-scale stagger-2" onclick="openContestModal('contest2')">
+                    <div class="contest-image">
+                        <img src="contest/fba.png" alt="Future Business Analyst Season 5">
+                    </div>
+                    <div class="contest-overlay">
+                        <h3 class="contest-title">Future Business Analyst S5</h3>
+                        <p class="contest-date">2025</p>
+                    </div>
+                </div>
+
+                <!-- Contest 3 -->
+                <div class="contest-card scroll-reveal-scale stagger-3" onclick="openContestModal('contest3')">
+                    <div class="contest-image">
+                        <img src="contest/pte.png" alt="PTE Champion">
+                    </div>
+                    <div class="contest-overlay">
+                        <h3 class="contest-title">PTE Champion</h3>
+                        <p class="contest-date">Top 35 - Score 72</p>
+                    </div>
+                </div>
+
+                <!-- Contest 4 -->
+                <div class="contest-card scroll-reveal-scale stagger-4" onclick="openContestModal('contest4')">
+                    <div class="contest-image">
+                        <img src="contest_nckh_navflow.jpg" alt="NAVFLOW Research">
+                    </div>
+                    <div class="contest-overlay">
+                        <h3 class="contest-title">NAVFLOW Research</h3>
+                        <p class="contest-date">Faculty-level - 2025</p>
+                    </div>
+                </div>
+
+                <!-- Contest 5 -->
+                <div class="contest-card scroll-reveal-scale stagger-5" onclick="openContestModal('contest5')">
+                    <div class="contest-image">
+                        <img src="contest/nckh2025.jpg" alt="Sports AI Research">
+                    </div>
+                    <div class="contest-overlay">
+                        <h3 class="contest-title">Sports AI Research</h3>
+                        <p class="contest-date">University-level - Ongoing</p>
+                    </div>
+                </div>
+
+                <!-- Contest 6 -->
+                <div class="contest-card scroll-reveal-scale stagger-6" onclick="openContestModal('contest6')">
+                    <div class="contest-image">
+                        <img src="contest/techspire.jpg" alt="TechSpire">
+                    </div>
+                    <div class="contest-overlay">
+                        <h3 class="contest-title">TechSpire</h3>
+                        <p class="contest-date">Top 12 - AI & Data</p>
+                    </div>
+                </div>
+
+                <!-- Contest 7 -->
+                <div class="contest-card scroll-reveal-scale" onclick="openContestModal('contest7')">
+                    <div class="contest-image">
+                        <img src="contest/datastorm.jpg" alt="DATASTORM 2025">
+                    </div>
+                    <div class="contest-overlay">
+                        <h3 class="contest-title">DATASTORM 2025</h3>
+                        <p class="contest-date">Round 2 - SwingAI Coach</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="section activities-section">
+        <div class="container">
+            <div class="activities-badge scroll-reveal">My Life</div>
+            
+            <div class="mylife-grid scroll-reveal">
+                <!-- Activity 1 -->
+                <div class="mylife-card">
+                    <div class="mylife-image">
+                        <img src="activity/building1.jpg" alt="Team Building K27">
+                    </div>
+                    <div class="mylife-overlay">
+                        <h3 class="mylife-title">Team Building K27</h3>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="mylife-card">
+                    <div class="mylife-image">
+                        <img src="activity/etit2.jpg" alt="CLB ETIT">
+                    </div>
+                    <div class="mylife-overlay">
+                        <h3 class="mylife-title">CLB ETIT</h3>
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="mylife-card">
+                    <div class="mylife-image">
+                        <img src="activity/nckh1.jpg" alt="Triển lãm NCKH">
+                    </div>
+                    <div class="mylife-overlay">
+                        <h3 class="mylife-title">Triển lãm NCKH</h3>
+                    </div>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="mylife-card">
+                    <div class="mylife-image">
+                        <img src="activity/trungthu1.jpg" alt="Trung Thu Cho Em">
+                    </div>
+                    <div class="mylife-overlay">
+                        <h3 class="mylife-title">Trung Thu Cho Em</h3>
+                    </div>
+                </div>
+
+                <!-- Activity 5 -->
+                <div class="mylife-card">
+                    <div class="mylife-image">
+                        <img src="activity/qsu1.jpg" alt="Quân sự">
+                    </div>
+                    <div class="mylife-overlay">
+                        <h3 class="mylife-title">Quân sự 2023</h3>
+                    </div>
+                </div>
+
+                <!-- Activity 6 -->
+                <div class="mylife-card">
+                    <div class="mylife-image">
+                        <img src="activity/talkshow3.jpg" alt="Hội Sinh Viên">
+                    </div>
+                    <div class="mylife-overlay">
+                        <h3 class="mylife-title">Hội Sinh Viên K27</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contest Modal -->
+    <div id="contestModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeContestModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-badge scroll-reveal">Contact Info</div>
+            
+            <div class="contact-main-wrapper">
+                <!-- Left Side: Contact Details -->
+                <div class="contact-left scroll-reveal-left">
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-text">
+                                <h3 class="contact-label">Phone</h3>
+                                <a href="tel:+84971512343" class="contact-value">+84971512343</a>
+                            </div>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-text">
+                                <h3 class="contact-label">E-mail</h3>
+                                <a href="mailto:ngthtnhung2005@gmail.com" class="contact-value">ngthtnhung2005@gmail.com</a>
+                            </div>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-text">
+                                <h3 class="contact-label">LinkedIn</h3>
+                                <a href="https://linkedin.com/in/ngthtnhung/" target="_blank" class="contact-value">linkedin.com/in/ngthtnhung/</a>
+                            </div>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-text">
+                                <h3 class="contact-label">GitHub</h3>
+                                <a href="https://github.com/ngthtnhung" target="_blank" class="contact-value">github.com/ngthtnhung</a>
+                            </div>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side: Title and Form -->
+                <div class="contact-right scroll-reveal-right">
+                    <h2 class="contact-title">
+                        Let's <span class="highlight">connect</span> and<br>
+                        <span class="highlight">work together</span>!
+                    </h2>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-send">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     </section>
 
     <!-- Footer -->
