@@ -23,17 +23,20 @@ const Home = () => {
       {/* Hero Section */}
       <section id="home" className="section hero-section">
         <div className="container">
-          <div className="hero-content">
-            <h1 className="hero-title">
-              Hi, I'm <span className="highlight">Nguyen Thi Tuyet Nhung</span>
-            </h1>
-            <p className="hero-subtitle">Data Analyst | ML Engineer | Business Intelligence</p>
-            <p className="hero-description">
-              I transform complex data into actionable insights using advanced analytics and machine learning.
-            </p>
-            <div className="hero-buttons">
-              <a href="#projects" className="btn btn-primary">View My Work</a>
-              <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+          <div className="hero-wrapper">
+            <div className="hero-content">
+              <div className="hero-badge">DATA ANALYST PORTFOLIO</div>
+              <h1 className="hero-title">
+                NGUYEN THI TUYET <span className="highlight">NHUNG</span>
+              </h1>
+              <p className="hero-tagline">
+                I help people finding <span className="highlight-text">insights</span> through <span className="highlight-text">data</span>
+              </p>
+            </div>
+            <div className="hero-image">
+              <div className="profile-circle">
+                <img src="/profile.png" alt="Nguyen Thi Tuyet Nhung" />
+              </div>
             </div>
           </div>
         </div>
