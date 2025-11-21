@@ -1,3 +1,23 @@
+// Certificate Modal Functions (Global Scope)
+window.openCertificateModal = function(imageUrl) {
+    const modal = document.getElementById('certificateModal');
+    const img = document.getElementById('certificateImage');
+    
+    if (modal && img) {
+        img.src = imageUrl;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+window.closeCertificateModal = function() {
+    const modal = document.getElementById('certificateModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+};
+
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Image Protection - Disable right-click on images
@@ -387,7 +407,7 @@ const contestData = {
     }
 };
 
-function openContestModal(contestId) {
+window.openContestModal = function(contestId) {
     const modal = document.getElementById('contestModal');
     const modalBody = document.getElementById('modalBody');
     const data = contestData[contestId];
@@ -426,29 +446,13 @@ function openContestModal(contestId) {
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
     }
-}
+};
 
-function closeContestModal() {
+window.closeContestModal = function() {
     const modal = document.getElementById('contestModal');
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
-}
-
-// Certificate Modal Functions
-function openCertificateModal(imageUrl) {
-    const modal = document.getElementById('certificateModal');
-    const img = document.getElementById('certificateImage');
-    
-    img.src = imageUrl;
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-}
-
-function closeCertificateModal() {
-    const modal = document.getElementById('certificateModal');
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
+};
 
 // Close modal when clicking outside
 window.onclick = function(event) {
@@ -456,18 +460,18 @@ window.onclick = function(event) {
     const certificateModal = document.getElementById('certificateModal');
     
     if (event.target == contestModal) {
-        closeContestModal();
+        window.closeContestModal();
     }
     if (event.target == certificateModal) {
-        closeCertificateModal();
+        window.closeCertificateModal();
     }
 }
 
 // Close modal with Escape key
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
-        closeContestModal();
-        closeCertificateModal();
+        window.closeContestModal();
+        window.closeCertificateModal();
     }
 });
 
