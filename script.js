@@ -230,26 +230,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Contact form handling
+    // Contact form handling with EmailJS
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            const submitBtn = contactForm.querySelector('.btn-send');
+            const originalText = submitBtn.textContent;
             
-            // Simple validation
-            if (name && email && message) {
-                // In a real application, you would send this data to a server
-                alert('Thank you for your message! I will get back to you soon.');
-                contactForm.reset();
-            } else {
-                alert('Please fill in all fields.');
-            }
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // EmailJS parameters
+            const serviceID = 'service_po8ex72';
+            const templateID = 'template_sfk9oa2'; // Thay bằng Template ID của bạn
+            
+            // Send email using EmailJS
+            emailjs.sendForm(serviceID, templateID, contactForm)
+                .then(function(response) {
+                    // Success
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Thank you for your message! I will get back to you soon. ✓');
+                    contactForm.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, function(error) {
+                    // Error
+                    console.log('FAILED...', error);
+                    alert('Sorry, there was an error sending your message. Please try again or contact me directly via email.');
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 
