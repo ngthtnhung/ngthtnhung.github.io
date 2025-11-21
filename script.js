@@ -27,6 +27,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Certificate/PDF Protection - Disable right-click on certificate previews
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target.closest('.certificate-pdf-preview') || e.target.tagName === 'IFRAME') {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // Prevent opening iframe in new tab via middle-click
+    document.addEventListener('mousedown', function(e) {
+        if (e.button === 1 && (e.target.closest('.certificate-pdf-preview') || e.target.tagName === 'IFRAME')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
     // Animated Background Canvas
     const canvas = document.getElementById('background-canvas');
     if (!canvas) return;
@@ -274,6 +290,9 @@ const contestData = {
         achievement: "Consolation Prize (Giải Khuyến khích)",
         description: "A competition themed 'Solutions for Sustainable Resources in the Future,' focusing on innovative ideas for environmental protection and renewable energy.",
         project: "GREEN FLOW - Biomass Energy Solution: A proposal to minimize organic waste (food scraps) by converting it into clean Biomass energy (Biogas, Biofuel) via a waste collection service platform (Web/App).",
+        links: [
+            { text: "Slide Deck", url: "https://www.canva.com/design/DAFtT8-rSbk/B4X0PxzCZzNL5EZYHN_EeQ/edit?utm_content=DAFtT8-rSbk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" }
+        ],
         learnings: [
             "Understanding of Biomass energy, carbon footprint reduction, and circular economy concepts",
             "Ideation of a green service model connecting waste generators with energy producers",
@@ -286,6 +305,7 @@ const contestData = {
         achievement: "Participant - 2025",
         description: "Themed 'The Last Alpinist - Business Competitiveness.' A competition challenging participants to analyze markets, identify opportunities, and devise strategies to ensure business leadership in volatile environments.",
         project: "Solving business cases focused on enhancing corporate competitiveness and strategic positioning.",
+        links: [],
         learnings: [
             "Strategic thinking and business vision development",
             "Market data analysis and competitor analysis techniques",
@@ -298,6 +318,7 @@ const contestData = {
         achievement: "Top 35 - Score 72/90",
         description: "Organized by the Vietnamese Student Association in Australia (SVAU) to promote English proficiency via the Pearson Test of English (PTE) for academic and professional purposes.",
         project: "Participation in Screening Round, Training Sessions, and Full Mock Tests to demonstrate comprehensive English language skills across Speaking, Writing, Reading, and Listening.",
+        links: [],
         learnings: [
             "Mastery of the PTE Academic test format and strategies",
             "Enhancement of academic and professional English proficiency",
@@ -310,6 +331,9 @@ const contestData = {
         achievement: "Faculty-level Research - May 2025",
         description: "An annual university-level research competition at Ton Duc Thang University encouraging students to apply academic knowledge to solve practical, real-world problems.",
         project: "NAVFLOW - Traffic Congestion Prediction and Smart Navigation using CCTV Images in Ho Chi Minh City. Developed a full-stack web application leveraging Deep Learning to analyze vehicle density from traffic cameras and predict congestion levels.",
+        links: [
+            { text: "GitHub Repository", url: "https://github.com/ngthtnhung/navflow-smart-traffic-app.git" }
+        ],
         learnings: [
             "AI/Computer Vision: Applied YOLOv8n for object detection (Cars/Motorbikes), OpenCV for image processing, and Roboflow for data annotation",
             "Full-stack Development: Built Backend with FastAPI (Python) and Frontend with ReactJS, TailwindCSS, and Ant Design",
@@ -322,6 +346,7 @@ const contestData = {
         achievement: "University-level Research - Ongoing",
         description: "Upcoming student research submission focusing on AI applications in sports training and motion analysis.",
         project: "[IN PROGRESS] Two-part project: (1) Text2Motion & Motion2Text Application - A bidirectional AI training system that generates reference motions from text and provides corrective feedback text from user motions (Focus: Squat, Plank, Push-up). (2) Golf Swing Analysis - An AI system for classifying swings (Good/Bad), detecting swing phases (backswing, impact, etc.), and comparing user form against professional benchmarks.",
+        links: [],
         learnings: [
             "[To be updated upon project completion]",
             "Advanced AI Models: MediaPipe (Pose Estimation), GCN (Graph Convolutional Networks), Transformer-based VAEs, and LSTM/TCN for temporal modeling",
@@ -334,6 +359,10 @@ const contestData = {
         achievement: "Top 12 - AI & Data Track - Ongoing",
         description: "The Vietnamese edition of the SEA Tech Skills Challenge (sponsored by Singapore Global Network), designed to bridge the gap between academic learning and professional earning by tackling real-world business challenges.",
         project: "[IN PROGRESS] Gen Z E-commerce Customer Churn Prediction: A machine learning project analyzing Gen Z e-commerce customer behavior to predict churn and inform retention strategies. Conducting data collection, feature engineering, model training, and evaluation. Translating technical findings into actionable business recommendations.",
+        links: [
+            { text: "GitHub Repository", url: "https://github.com/ngthtnhung/skilio_mall_churn_prediction.git" },
+            { text: "Slide Deck", url: "https://drive.google.com/file/d/1pt3UlWdJ4qZhBS4SGG9zmxjRRtXjRyQs/view?usp=sharing" }
+        ],
         learnings: [
             "[To be updated upon competition completion]",
             "Machine Learning Tools: Python, Jupyter Notebook, LightGBM, XGBoost, Scikit-learn",
@@ -346,6 +375,7 @@ const contestData = {
         achievement: "Round 2 Qualifier - Team 'Cook Up The Storm'",
         description: "DATASTORM 2025 is a prestigious academic competition for students passionate about Data Science nationwide and internationally. Themed 'Burst of Passion - Conquer Data,' the competition features real-world datasets and challenges participants to create breakthrough products solving practical industry problems. Organized by TDTU IT Faculty, Kyanon Digital, HCMC University of Education IT Faculty, and Saigon Business School.",
         project: "[IN PROGRESS - Round 2] SwingAI Coach - Analysis of Sports Behavior (Golf): A webcam-based, AI-powered golf swing analysis platform that delivers professional-grade feedback using only a standard camera. The system integrates Computer Vision (MediaPipe + YOLOv8/v10), Deep Learning (Bi-LSTM), and biomechanical data to provide precise, actionable insights. Key features: (1) Real-time tracking of 33 anatomical landmarks + complete golf club detection, (2) Precision segmentation into 8 distinct swing phases with ±1 frame accuracy, (3) Phase-specific biomechanical evaluation with rule-based + LLM-enhanced feedback generation, (4) Interactive web application with color-coded visual overlays and progress tracking.",
+        links: [],
         learnings: [
             "[To be updated upon final round completion]",
             "Advanced Computer Vision: MediaPipe Pose for 3D body tracking (33 joints), YOLOv8/v10 for custom golf club detection, dual-stream feature fusion (107-dimensional vectors)",
@@ -369,6 +399,15 @@ function openContestModal(contestId) {
         });
         learningsHTML += '</ul>';
         
+        let linksHTML = '';
+        if (data.links && data.links.length > 0) {
+            linksHTML = '<div class="contest-links">';
+            data.links.forEach(link => {
+                linksHTML += `<a href="${link.url}" target="_blank" class="contest-link-btn">${link.text}</a>`;
+            });
+            linksHTML += '</div>';
+        }
+        
         modalBody.innerHTML = `
             <h2>${data.title}</h2>
             <p style="color: #fbbf24; font-size: 1.1rem; font-weight: 600; margin-bottom: 20px;">${data.achievement}</p>
@@ -378,6 +417,7 @@ function openContestModal(contestId) {
             
             <h3>Project</h3>
             <p>${data.project}</p>
+            ${linksHTML}
             
             <h3>What I Learned</h3>
             ${learningsHTML}
@@ -394,11 +434,32 @@ function closeContestModal() {
     document.body.style.overflow = 'auto';
 }
 
+// Certificate Modal Functions
+function openCertificateModal(imageUrl) {
+    const modal = document.getElementById('certificateModal');
+    const img = document.getElementById('certificateImage');
+    
+    img.src = imageUrl;
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCertificateModal() {
+    const modal = document.getElementById('certificateModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
 // Close modal when clicking outside
 window.onclick = function(event) {
-    const modal = document.getElementById('contestModal');
-    if (event.target == modal) {
+    const contestModal = document.getElementById('contestModal');
+    const certificateModal = document.getElementById('certificateModal');
+    
+    if (event.target == contestModal) {
         closeContestModal();
+    }
+    if (event.target == certificateModal) {
+        closeCertificateModal();
     }
 }
 
@@ -406,6 +467,7 @@ window.onclick = function(event) {
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeContestModal();
+        closeCertificateModal();
     }
 });
 
@@ -461,8 +523,9 @@ function typeWriter() {
     const taglineElement = document.querySelector('.hero-tagline');
     if (!taglineElement) return;
     
-    const fullText = "I help people finding insights through data";
-    const words = fullText.split(' ');
+    // Adjust line break for better layout - break after "decisions,"
+    const fullText = "Transforming data into decisions,<br>bridging business with actionable insights.";
+    const words = fullText.replace('<br>', ' <br> ').split(' ');
     let wordIndex = 0;
     let currentText = '';
     
@@ -470,12 +533,20 @@ function typeWriter() {
     
     function typeWord() {
         if (wordIndex < words.length) {
-            currentText += (wordIndex > 0 ? ' ' : '') + words[wordIndex];
+            const word = words[wordIndex];
             
-            // Wrap "insights" and "data" with highlight-text span
+            if (word === '<br>') {
+                currentText += '<br>';
+            } else {
+                currentText += (wordIndex > 0 && words[wordIndex - 1] !== '<br>' ? ' ' : '') + word;
+            }
+            
+            // Wrap key words with highlight span
             const displayText = currentText
-                .replace(/insights/g, '<span class="highlight-text">insights</span>')
-                .replace(/data/g, '<span class="highlight-text">data</span>');
+                .replace(/data/g, '<span class="highlight">data</span>')
+                .replace(/decisions/g, '<span class="highlight">decisions</span>')
+                .replace(/business/g, '<span class="highlight">business</span>')
+                .replace(/insights/g, '<span class="highlight">insights</span>');
             
             taglineElement.innerHTML = displayText;
             wordIndex++;
