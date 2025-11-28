@@ -25,6 +25,7 @@
                 <li><a href="#certificates" class="nav-link">Certificates</a></li>
                 <li><a href="#contests" class="nav-link">Contests</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><button id="langToggle" class="lang-toggle">EN</button></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -41,7 +42,7 @@
                 <div class="hero-content">
                     <div class="hero-badge">BUSINESS DATA ANALYST PORTFOLIO</div>
                     <h1 class="hero-title"><span class="title-part1">NGUYEN THI </span><span class="highlight">TUYET NHUNG</span></h1>
-                    <p class="hero-tagline"></p>
+                    <p class="hero-tagline" id="heroTagline"></p>
                 </div>
                 <div class="hero-image">
                     <div class="profile-circle">
@@ -401,7 +402,7 @@
                 <!-- Contest 4 -->
                 <div class="contest-card scroll-reveal-scale stagger-4" onclick="openContestModal('contest4')">
                     <div class="contest-image">
-                        <img src="contest_nckh_navflow.jpg" alt="NAVFLOW Research">
+                        <img src="nckh.png" alt="NAVFLOW Research">
                     </div>
                     <div class="contest-overlay">
                         <h3 class="contest-title">NAVFLOW Research</h3>
@@ -555,6 +556,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="translations.js"></script>
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">

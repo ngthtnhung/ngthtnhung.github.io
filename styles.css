@@ -214,6 +214,25 @@ img {
     transition: all 0.3s ease;
 }
 
+/* Language Toggle Button */
+.lang-toggle {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #0a1628;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+}
+
+.lang-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.5);
+}
+
 /* Sections */
 .section {
     padding: 80px 0;

@@ -537,12 +537,12 @@ function typeTitleEffect() {
 }
 
 // Typing effect for hero tagline
-function typeWriter() {
+function typeWriter(customText) {
     const taglineElement = document.querySelector('.hero-tagline');
     if (!taglineElement) return;
     
-    // Adjust line break for better layout - break after "decisions,"
-    const fullText = "Transforming data into decisions,<br>bridging business with actionable insights.";
+    // Use custom text if provided, otherwise use default English text
+    const fullText = customText || "Transforming data into decisions,<br>bridging business with actionable insights.";
     const words = fullText.replace('<br>', ' <br> ').split(' ');
     let wordIndex = 0;
     let currentText = '';
@@ -613,7 +613,11 @@ function parallaxEffect() {
 
 // Run effects when page loads
 window.addEventListener('load', function() {
-    typeTitleEffect();
+    // Only run typing effect if language is English (default)
+    const savedLang = localStorage.getItem('language') || 'en';
+    if (savedLang === 'en') {
+        typeTitleEffect();
+    }
     scrollReveal();
 });
 
