@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">N<span class="dot">.</span></a>
+    <button class="nav-toggle" aria-expanded="false">MENU</button>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:40px;">
+  <div class="container">
+    <span class="eyebrow">Contact</span>
+    <h1>Have a project or a role in mind?</h1>
+    <p class="lede">I'm open to Business Analyst, QA Associate, Data Analyst, and implementation opportunities — feel free to reach out directly or leave a message.</p>
+  </div>
+</header>
+
+<section>
+  <div class="container contact-grid">
+    <div>
+      <div class="contact-info-item">
+        <span class="k">Email</span>
+        <span class="v"><a href="mailto:tuyetnhung.tech@gmail.com">tuyetnhung.tech@gmail.com</a></span>
+      </div>
+      <div class="contact-info-item">
+        <span class="k">Phone</span>
+        <span class="v">+84 971 512 343</span>
+      </div>
+      <div class="contact-info-item">
+        <span class="k">Location</span>
+        <span class="v">Ho Chi Minh City, Vietnam</span>
+      </div>
+      <div class="contact-info-item">
+        <span class="k">LinkedIn</span>
+        <span class="v"><a href="https://linkedin.com/in/ngthtnhung" target="_blank">linkedin.com/in/ngthtnhung</a></span>
+      </div>
+      <div class="contact-info-item">
+        <span class="k">GitHub</span>
+        <span class="v"><a href="https://github.com/ngthtnhung" target="_blank">github.com/ngthtnhung</a></span>
+      </div>
+    </div>
+
+    <div>
+      <form onsubmit="event.preventDefault(); alert('Message sent — or connect this form to your email service for real submissions.');">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Nhung. Built with care.</span>
+    <a href="mailto:tuyetnhung.tech@gmail.com">tuyetnhung.tech@gmail.com</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

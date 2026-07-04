@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Management DevOps Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">N<span class="dot">.</span></a>
+    <button class="nav-toggle" aria-expanded="false">MENU</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:40px;">
+  <div class="container">
+    <span class="eyebrow">Project detail</span>
+    <h1>Product Management DevOps Platform</h1>
+    <p class="lede">Node.js + Express product management application with MongoDB persistence, fault-tolerant in-memory fallback, file uploads, Prometheus monitoring, Docker Swarm orchestration, and Terraform infrastructure automation.</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <h2>Overview</h2>
+    <p>This project is a Node.js and Express product management application built for a DevOps final assignment. It provides a server-rendered web interface and a REST API, with robust deployment and monitoring support for production-like infrastructure.</p>
+
+    <h2>Key features</h2>
+    <ul style="padding-left:18px; color:var(--slate);">
+      <li>Product catalog UI rendered with EJS</li>
+      <li>REST API for product CRUD operations</li>
+      <li>MongoDB persistence through Mongoose</li>
+      <li>In-memory fallback data source with seeded Apple product data</li>
+      <li>Product image uploads via Multer</li>
+      <li>Prometheus metrics endpoint at <code>/metrics</code></li>
+      <li>Docker image build support and Docker Swarm orchestration</li>
+      <li>Terraform and server setup scripts for infrastructure provisioning</li>
+      <li>CI/CD via GitHub Actions</li>
+    </ul>
+
+    <h2>Technical stack</h2>
+    <ul style="padding-left:18px; color:var(--slate);">
+      <li>Runtime: Node.js 20</li>
+      <li>Backend: Express.js</li>
+      <li>Views: EJS</li>
+      <li>Database: MongoDB with Mongoose</li>
+      <li>Validation: express-validator</li>
+      <li>Uploads: Multer</li>
+      <li>Metrics: prom-client, Prometheus, Grafana, Alertmanager</li>
+      <li>Containerization: Docker</li>
+      <li>Orchestration: Docker Swarm</li>
+      <li>Reverse proxy: Nginx</li>
+      <li>Infrastructure: Terraform</li>
+      <li>CI/CD: GitHub Actions</li>
+    </ul>
+
+    <h2>Repository structure</h2>
+    <pre style="background:var(--bg-soft); padding:16px; border-radius:8px; overflow:auto; color:var(--ink);">.
+|-- .github/workflows/
+|-- controllers/
+|-- infrastructure/
+|-- models/
+|-- monitoring/
+|-- phase1/
+|-- phase2/
+|-- phase3/
+|-- public/
+|-- routes/
+|-- services/
+|-- validators/
+|-- views/
+|-- Dockerfile
+|-- docker-stack.yml
+|-- main.js
+|-- nginx.conf
+|-- package.json
+`-- README.md</pre>
+
+    <h2>Local setup</h2>
+    <p>Install dependencies and start locally:</p>
+    <pre style="background:var(--bg-soft); padding:16px; border-radius:8px; overflow:auto; color:var(--ink);">npm install
+cp .env.example .env
+# On Windows PowerShell:
+Copy-Item .env.example .env
+npm start
+# For development with auto-reload:
+npm run dev
+</pre>
+    <p>If MongoDB is reachable within 3 seconds, the app uses MongoDB. Otherwise it falls back to an in-memory data source so the UI and API remain available.</p>
+
+    <h2>API endpoints</h2>
+    <p>Base URL: <code>http://localhost:3000/products</code></p>
+    <ul style="padding-left:18px; color:var(--slate);">
+      <li><strong>GET</strong> /products — list all products</li>
+      <li><strong>GET</strong> /products/:id — get one product by ID</li>
+      <li><strong>POST</strong> /products — create a product</li>
+      <li><strong>PUT</strong> /products/:id — replace a product</li>
+      <li><strong>PATCH</strong> /products/:id — partially update a product</li>
+      <li><strong>DELETE</strong> /products/:id — delete a product</li>
+    </ul>
+    <p>Example fields include name, price, color, description, imageUrl, and optional multipart upload field <code>imageFile</code>.</p>
+
+    <h2>Metrics</h2>
+    <p>The application exposes Prometheus metrics at <a href="/metrics">/metrics</a>, including default Node.js process metrics and a custom HTTP request duration histogram named <code>http_request_duration_seconds</code>.</p>
+
+    <h2>Outcome</h2>
+    <p>This project demonstrates a resilient web application architecture that remains available even when the database is unavailable, supports modern monitoring and container orchestration, and includes automation for production-grade infrastructure.</p>
+
+    <h2>Artifacts</h2>
+    <ul style="padding-left:18px; color:var(--slate);">
+      <li><a href="projects.html">Back to Projects</a></li>
+      <li><a href="https://github.com/diemothergo/final_devops_group19.git" target="_blank">GitHub repository</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Nhung. Built with care.</span>
+    <a href="contact.html">Let's talk →</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

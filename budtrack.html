@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BudTrack — Personal Finance App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">N<span class="dot">.</span></a>
+    <button class="nav-toggle" aria-expanded="false">MENU</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:40px;">
+  <div class="container">
+    <span class="eyebrow">Project detail</span>
+    <h1>BudTrack — Personal Finance Management App</h1>
+    <p class="lede">A comprehensive Android budgeting app for tracking expenses, managing wallets, and visualizing spending with material design and multilingual support.</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <h2>Overview</h2>
+    <p>BudTrack is a personal finance management application built to help users manage budgets, record expenses, and view financial insights through a clean Android interface.</p>
+
+    <h2>Features</h2>
+    <ul style="padding-left:18px; color:var(--slate);">
+      <li>Budget Management: create and manage budgets for expense categories</li>
+      <li>Expense Tracking: record, categorize, and review expenses</li>
+      <li>Analytics: visualize spending patterns and financial insights</li>
+      <li>Wallet Support: manage multiple wallet types including Basic, Credit, and Savings</li>
+      <li>Calendar View: track expenses by date with an interactive calendar</li>
+      <li>Dark Mode: full dark mode support for comfortable viewing</li>
+      <li>Multi-language: Vietnamese and English support</li>
+      <li>Material Design: modern UI with smooth interactions</li>
+    </ul>
+
+    <h2>Technology stack</h2>
+    <ul style="padding-left:18px; color:var(--slate);">
+      <li>Language: Java</li>
+      <li>Build system: Gradle</li>
+      <li>Design: Material Design 3</li>
+      <li>Testing: JUnit, Espresso</li>
+      <li>Target: Android API level set in build.gradle</li>
+    </ul>
+
+    <h2>Project structure</h2>
+    <pre style="background:var(--bg-soft); padding:16px; border-radius:8px; overflow:auto; color:var(--ink);">budtrack/
+├── app/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   ├── res/
+│   │   │   │   ├── drawable/
+│   │   │   │   ├── layout/
+│   │   │   │   ├── values/
+│   │   │   │   ├── values-night/
+│   │   │   │   └── values-vi/
+│   │   │   └── AndroidManifest.xml
+│   │   ├── test/
+│   │   └── androidTest/
+│   ├── build.gradle
+│   └── proguard-rules.pro
+├── gradle/
+│   └── libs.versions.toml
+├── build.gradle
+├── settings.gradle
+└── README.md</pre>
+
+    <h2>Getting started</h2>
+    <p>Run the app from Android Studio or the command line:</p>
+    <pre style="background:var(--bg-soft); padding:16px; border-radius:8px; overflow:auto; color:var(--ink);">./gradlew build
+./gradlew assembleDebug
+./gradlew assembleRelease
+./gradlew test
+./gradlew connectedAndroidTest</pre>
+
+    <h2>Outcome</h2>
+    <p>BudTrack delivers a polished finance app experience with strong budgeting workflows, easy expense tracking, practical analytics, and accessible Vietnamese/English support.</p>
+
+    <h2>Artifacts</h2>
+    <ul style="padding-left:18px; color:var(--slate);">
+      <li><a href="projects.html">Back to Projects</a></li>
+      <li><a href="https://github.com/ngthtnhung" target="_blank">GitHub profile</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Nhung. Built with care.</span>
+    <a href="contact.html">Let's talk →</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
